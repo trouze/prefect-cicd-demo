@@ -11,10 +11,4 @@ def hello_task():
 with Flow("hello-flow") as flow:
     hello_task()
 
-flow.storage = Flow(
-    GitHub(
-        repo="trouze/prefect-orion-demo",                           # name of repo
-        path="/flow.py",                   # location of flow file in repo
-        access_token_secret="trouzegithub"  # name of personal access token secret
-    )
-)
+flow.storage = GitHub(repo="trouze/prefect-orion-demo",path="/flow.py",access_token_secret="trouzegithub")
