@@ -1,10 +1,10 @@
-from prefect import flow, get_run_logger
+import prefect
+from prefect import task, Flow
 
-@flow(name="Testing")
-def basic_flow():
-    logger = get_run_logger()
-    logger.warning("The fun is about to begin")
+@task
+def hello_task():
+    logger = prefect.context.get("logger")
+    logger.info("Hello world!")
 
-if __name__ == "__main__":
-    basic_flow()
-
+with Flow("hello-flow") as flow:
+    hello_task()
