@@ -12,7 +12,6 @@ with Flow("hello-flow") as flow:
     hello_task()
 
 flow.storage = Flow(
-    "hello-flow",
     GitHub(
         repo="trouze/prefect-orion-demo",                           # name of repo
         path="/flow.py",                   # location of flow file in repo
