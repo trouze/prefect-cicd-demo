@@ -17,4 +17,4 @@ jobs:
     - name: Authenticate to Prefect dependencies
       run: prefect auth login -k $KEY
     - name: Register flow
-      run: prefect register -p flow.py --project <project_name>
+      run: prefect register -p flow.py --project truckstop-demo
